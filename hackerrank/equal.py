@@ -1,8 +1,5 @@
-#!/bin/python3
-
 # https://www.hackerrank.com/challenges/equal/problem
 
-import os
 
 def getn(x):
     s = x // 5
@@ -20,17 +17,10 @@ def equal(arr):
     return s
 
 if __name__ == '__main__':
-    fptr = open("data.out", 'w')
-
     t = int(input())
 
-    for t_itr in range(t):
+    for _ in range(t):
         n = int(input())
-
         arr = list(map(int, input().rstrip().split()))
 
-        result = equal(arr)
-
-        fptr.write(str(result) + '\n')
-
-    fptr.close()
+        print(equal(arr))

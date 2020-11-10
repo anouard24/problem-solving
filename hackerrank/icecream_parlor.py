@@ -1,7 +1,5 @@
-#!/bin/python3
-
-import os
 from bisect import bisect_left
+
 
 def BinarySearch(a, x, lo=0): 
     i = bisect_left(a, x, lo=lo) 
@@ -10,7 +8,7 @@ def BinarySearch(a, x, lo=0):
     else: 
         return -1
 
-# Complete the icecreamParlor function below.
+
 def icecreamParlor(m, arr, n):
     sarr = sorted(arr)
     a = b = -1
@@ -32,11 +30,10 @@ def icecreamParlor(m, arr, n):
     return sorted([i, j])
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     t = int(input())
 
-    for t_itr in range(t):
+    for _ in range(t):
         m = int(input())
 
         n = int(input())
@@ -45,7 +42,4 @@ if __name__ == '__main__':
 
         result = icecreamParlor(m, arr, n)
 
-        fptr.write(' '.join(map(str, result)))
-        fptr.write('\n')
-
-    fptr.close()
+        print(*result)
