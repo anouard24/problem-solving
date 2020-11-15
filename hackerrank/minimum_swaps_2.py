@@ -9,14 +9,14 @@ def minimumSwaps(arr, n):
     for i in range(n):
         if not uf.contains(i):
             uf.add(i)
-        v = arr[i]-1
+        v = arr[i] - 1
         if not uf.contains(v):
             uf.add(v)
         uf.unify(i, v)
     return n - uf.components()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     n = int(input())
     arr = list(map(int, input().rstrip().split()))

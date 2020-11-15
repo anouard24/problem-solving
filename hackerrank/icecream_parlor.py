@@ -1,11 +1,11 @@
 from bisect import bisect_left
 
 
-def BinarySearch(a, x, lo=0): 
-    i = bisect_left(a, x, lo=lo) 
-    if i != len(a) and a[i] == x: 
-        return i 
-    else: 
+def BinarySearch(a, x, lo=0):
+    i = bisect_left(a, x, lo=lo)
+    if i != len(a) and a[i] == x:
+        return i
+    else:
         return -1
 
 
@@ -13,11 +13,11 @@ def icecreamParlor(m, arr, n):
     sarr = sorted(arr)
     a = b = -1
     for i in range(n):
-        j = BinarySearch(sarr, m-sarr[i], lo=i+1)
+        j = BinarySearch(sarr, m - sarr[i], lo=i + 1)
         if j != -1:
             a = sarr[i]
-            b = m-a
-            print(">>",a,b,m)
+            b = m - a
+            print(">>", a, b, m)
 
     i = j = -1
     for k in range(n):
@@ -29,7 +29,8 @@ def icecreamParlor(m, arr, n):
             i = k + 1
     return sorted([i, j])
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
 
     t = int(input())
 

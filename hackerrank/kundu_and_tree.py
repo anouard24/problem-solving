@@ -7,7 +7,7 @@ def comb(n, k):
         return 0
     x = 1
     for i in range(min(k, n - k)):
-        x = x*(n - i)//(i + 1)
+        x = x * (n - i) // (i + 1)
     return x
 
 

@@ -1,5 +1,5 @@
-
 # https://www.hackerrank.com/challenges/greedy-florist/problem
+
 
 def getMinimumCost(k, c, n):
     c.sort(reverse=True)
@@ -11,7 +11,8 @@ def getMinimumCost(k, c, n):
         i += 1
     return s
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
 
     n, k = map(int, input().rstrip().split())
     c = list(map(int, input().rstrip().split()))

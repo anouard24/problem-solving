@@ -19,7 +19,7 @@ def cookies(k, arr):
     return -1 if h[0] < k else j
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, k = map(int, input().rstrip().split())
     arr = list(map(int, input().rstrip().split()))
 

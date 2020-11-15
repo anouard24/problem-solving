@@ -1,5 +1,5 @@
-
 from collections import defaultdict
+
 
 def equalizeArray(arr):
     d = defaultdict(int)
@@ -8,7 +8,7 @@ def equalizeArray(arr):
     return n - d[max(d, key=d.get)]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     n = int(input())
     arr = list(map(int, input().rstrip().split()))

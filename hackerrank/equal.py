@@ -9,14 +9,16 @@ def getn(x):
     s += x
     return s
 
+
 def equal(arr):
     arr.sort()
     s = 0
     for i in arr:
-        s += getn(i-arr[0])
+        s += getn(i - arr[0])
     return s
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     t = int(input())
 
     for _ in range(t):
