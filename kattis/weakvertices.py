@@ -1,6 +1,4 @@
-
 class UnionFind:
-    
     def __init__(self):
         self.size = 0
         self.numComponents = 0
@@ -16,17 +14,16 @@ class UnionFind:
     def contains(self, p):
         return self.ids.get(p, None) != None
 
-
     def find(self, p):
         r = p
         while r != self.ids[r]:
             r = self.ids[r]
-        
+
         while p != r:
             pp = self.ids[p]
             self.ids[p] = r
             p = pp
-        
+
         return r
 
     def connected(self, p, q):
@@ -53,9 +50,9 @@ class UnionFind:
         else:
             self.szs[root1] = self.szs[root1] + self.szs[root2]
             self.ids[root2] = root1
-        
+
         self.numComponents -= 1
-    
+
     def minmax(self):
         mini = self.size
         maxi = 0
@@ -63,35 +60,34 @@ class UnionFind:
             if i == self.ids[i]:
                 mini = min(mini, self.szs[i])
                 maxi = max(maxi, self.szs[i])
-        
-        return mini, maxi
 
+        return mini, maxi
 
 
 # main program
 while True:
-	n = int(input())
-	if n == -1:
-		break
+    n = int(input())
+    if n == -1:
+        break
 
-	uf = UnionFind()
-	matrix = []
-	for v in range(n):
-		line = list(map(int, input().split()))
-		matrix.append(line)
-		uf.add(v)
+    uf = UnionFind()
+    matrix = []
+    for v in range(n):
+        line = list(map(int, input().split()))
+        matrix.append(line)
+        uf.add(v)
 
-	for i in range(n):
-		f = []
-		for j in range(i+1, n):
-			if matrix[i][j] == 1:
-				f.append(j)
-		for k in f:
-			for l in f:
-				if k != l and matrix[k][l] == 1:
-					uf.unify(i, k)
-					uf.unify(i, l)
+    for i in range(n):
+        f = []
+        for j in range(i + 1, n):
+            if matrix[i][j] == 1:
+                f.append(j)
+        for k in f:
+            for l in f:
+                if k != l and matrix[k][l] == 1:
+                    uf.unify(i, k)
+                    uf.unify(i, l)
 
-	for i in range(n):
-		if uf.componentsSize(i) == 1:
-			print(i, end=" ")
+    for i in range(n):
+        if uf.componentsSize(i) == 1:
+            print(i, end=" ")
